@@ -172,4 +172,4 @@ int main(){
     return 0;
 }
 
-//   question1:   jo me static array banavo hoy class ni andar and hu public function ne call karu tyare mare array pass karvo hoy to thay.
+
