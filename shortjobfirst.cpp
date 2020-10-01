@@ -45,8 +45,11 @@ int main(){
 
     for(int i=0 ; i<= nP-1; i++){
         p[i].getP();
+
          p[i].getAt();
+
          p[i].getBt();
+         
     }
     
     minAt = p[0].aT;
@@ -80,19 +83,15 @@ int main(){
     int sCount = 0;
     
     for(k= 0; k<nP ; k++){                  // for the sort arrival + burst
-    
         minAt = p[count].aT;
         minBt = p[count].bT;
         minPs = p[count].p;
     
         for(i=count ; i<= nP-1; i++){   // for how many arrival time same in the programme
-        
             if(minAt == p[i+1].aT){
             count++;
             total++;
-        
             }
-    
         }
     
         for(j = sCount ; j< count ; j++){    // here arival time same and sort according to burst time
@@ -107,9 +106,7 @@ int main(){
             p[k].aT = minAt;
             p[k].bT = minBt;
             p[k].p = minPs;
-        
             }
-    
         }
         
         sCount = ++count;
@@ -121,11 +118,8 @@ int main(){
     count = p[0].bT;
     sCount = 0;
     int m;
-    
     for(k = 0; k < nP ; k++){
-    
         minBt = p[k+1].bT;
-        
         for(i = k+1 ; i<=nP ;i++)
         {
             if(p[i].aT <= count && p[i].bT < minBt ){
@@ -148,13 +142,10 @@ int main(){
  
     for(i=0 ; i< nP ; i++){                     //  for the birstTime is equal at that time arrange proceess order wise
         if(p[i].bT == p[i+1].bT && p[i].p > p[i+1].p){
-    
             m = p[i+1].p;
                 p[i+1].p = p[i].p;
                 p[i].p = m;
-
         }
-
     }
 
     cout<<"\n process \t Arrival time \t burstTime"; // for the display
